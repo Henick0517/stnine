@@ -1,0 +1,366 @@
+@charset "utf-8";
+
+@media (min-width: 1330px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 1330px;
+    }
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'notoKr', sans-serif;
+    color: #333;
+    overflow-x: hidden;
+}
+
+a{
+    color: #333;
+    text-decoration: none;
+    position: relative;
+}
+
+a:hover{
+    color :#777;
+    text-decoration: none;
+}
+
+a::after{
+   content: "";
+   position: absolute;
+   left: -5px;
+   top: -5px;
+   width: 100%;
+   height: 100%;
+   border-radius: 15px;
+   background :#efefef;
+   transition: all 300ms;
+   opacity: 0;
+   z-index: -1;
+}
+
+a:hover::after{
+    left: 0;
+    top: 0;
+    opacity: 0.5;
+}
+
+.bold{
+    font-weight:700;
+}
+
+/* .topnav */
+.topnav{
+    border-bottom:1 px solid #e3e3e3;
+}
+
+.topnav .navbar{
+    padding: 0;
+}
+
+.topnav .navbar a{
+    display: block;
+    padding: 13px 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.topnav .navbar .join{
+    position: relative;
+}
+
+.topnav .navbar .point{
+    width: 55px;
+    height: 22px;
+    position: absolute;
+    left: 5px;
+    top: 40px;
+    color: #fff;
+    border-radius: 8px;
+    background: #333;
+    font-size: 11px;
+    text-align: center;
+    line-height: 20px;
+    animation: join-point-animation 1s linear infinite;
+}
+
+@keyframes join-point-animation {
+    0% {
+       transform: translateY(0);
+    }
+    50% {
+       transform: translateY(-5px);
+    }
+    100% {
+       transform: translateY(0);
+    }
+}
+
+.topnav .navbar .point::before{
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    content: "";
+    left: 23px;
+    top: -4px;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 4px solid #333;
+    z-index: 2;
+}
+
+.topnav .navbar .badge-mlight{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    font-size: 11px;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 50%;
+    background-color:#dedede;
+}
+
+.topnav .navbar .nation{
+    border-left: 1px solid #e3e3e3;
+    border-right: 1px solid #e3e3e3;
+}
+
+.topnav .navbar .nation a{
+    color: #999;
+}
+
+.topnav .navbar .nation span{
+    display: inline-block;
+    width: 25px;
+    height: 20px;
+}
+
+.topnav .navbar .nation span.kor{
+    background: url("../images/flags.png") no-repeat -47px -85px;
+}
+
+
+/* .header (1번째 nav 이후) */
+
+.leftbox, .rightbox{
+    display: flex;
+}
+
+/* .leftbox */
+.leftbox{
+    align-items: flex-end;
+}
+
+.leftbox .sns{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 15px 5px;
+    font-size: 20px;
+    text-align: center;
+    background: #efefef;
+    border-radius: 50%;
+    transition: all 300ms;
+}
+
+.leftbox .sns.instagram:hover{
+    background-image: linear-gradient(to right, #fa9753, #773ac6);
+    color: #fff;
+}
+
+.leftbox .sns.kakao:hover{
+    background: #333;
+    color: #fee500;
+}
+
+.leftbox .centerbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    text-transform: uppercase;
+}
+
+.leftbox .centerbox a{
+    display: inline-block;
+    width: 350px;
+    height: 90px;
+    margin: 40px 0;
+    font-weight: 100;
+    text-align: right;
+    line-height: 1;
+    background:url("../images/logo.png") no-repeat;
+    background-size:auto 90px;
+}
+
+/* .centerbox */
+.centerbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    text-transform: uppercase;
+}
+.centerbox a{
+    display: inline-block;
+    width: 350px;
+    height: 90px;
+    margin: 40px 0;
+    text-align: right;
+    font-weight: 100;
+    line-height: 1;
+    background: url("../images/logo.png") no-repeat;
+    background-size: auto 90px;
+}
+
+/* .rightbox */
+.rightbox{
+    position: relative;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-bottom: 20px;
+}
+
+.rightbox input.search{
+    width: 100%;
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+}
+
+.rightbox #search{
+    overflow: hidden;
+    border: 1px solid #e3e3e3;
+    border-radius: 5px;
+    transform: scaleX(0.9);
+    transform-origin: 100% 0;
+    transition: all 300ms;
+}
+
+.rightbox #search.focus{
+    transform: scaleX(1);
+}
+
+
+.rightbox .search-icon{
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+    font-size: 18px;
+    z-index: 2;
+}
+
+/************ navigation *******************/
+.navigation{
+    border-top:1px solid #e3e3e3;
+    border-bottom:1px solid #e3e3e3;
+    display:flex;
+}
+.main-nav{
+    margin-left:120px;
+}
+.category{
+    border-left:1px solid #e3e3e3;
+    border-right:1px solid #e3e3e3;
+    width:54px;
+    height:56px;
+    top:0;
+    left:0;
+    cursor:pointer;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 300ms;
+}
+.line{
+    display: inline-block;
+    width:20px;
+    height:2px;
+    background:#333;
+    margin:2px 0;
+    transition: all 300ms;
+}
+.category:hover{
+    background-color:#333;
+}
+.category:hover .line-1{
+    transform: rotate(45deg) translate(3.5px, 5px);
+    background-color:#fff;
+}
+.category:hover .line-2{
+    opacity:0;
+}
+.category:hover .line-3{
+    transform:rotate(-45deg) translate(3.5px, -5px);
+    background-color:#fff;
+}
+.main-nav{
+    text-transform: uppercase;
+}
+.nav-item{
+    position:relative;
+}
+.nav-item ul.lnb{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    position:absolute;
+    z-index:999;
+    background:#fff;
+    width:100%;
+    top:100%;
+    left:0;
+    width:150px;
+    padding-top:10px;
+    padding-bottom:10px;
+    border:1px solid #ddd;
+    display:none;
+}
+.nav-item:hover ul.lnb{
+    display:block;
+}
+.nav-item li{
+    padding:5px 15px;
+}
+
+/* #hero */
+/* .slide */
+.slide-container{
+    position: relative;
+}
+
+.slide-container .mySlides{
+    display: none;
+}
+
+.slide-container .mySlides img{
+    max-width: 100%;
+}
+
+.slide-container .fd{
+    animation-name: fadeIn;
+    animation-duration: 1.5s;
+}
+
+@keyframes fadeIn{
+    from { opacity: .4 }
+    to { opacity: 1 }
+}
+
+
+
+
+
+
+
+
+
+
+
+
